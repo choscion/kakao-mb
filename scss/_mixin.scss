@@ -1,0 +1,40 @@
+@mixin elip($line,$lh:null) {
+    // 공통
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: $lh+px;
+
+    @if($line > 1){
+        display: -webkit-box;
+        -webkit-line-clamp: $line;
+        -webkit-box-orient: vertical;
+        max-height: $line*$lh+px;
+    }
+    @else{
+        white-space: nowrap;
+    }
+}
+
+/*반응형 화면 크기*/ 
+$mobile: 767px+1px;
+$tablet: 1023px+1px;
+$desktop: 1440px;
+
+
+@mixin mobile{ @media (max-width: $mobile){
+     @content; 
+    } 
+}
+
+@mixin tablet{ @media (min-width: 768px) and (max-width: 1023px){
+     @content; 
+    } 
+}
+@mixin desktop{ @media (min-width: 1024px) and (max-width: 1440px){
+     @content; 
+    } 
+}
+@mixin pc{ @media (min-width: 1441px){
+     @content; 
+    } 
+}
