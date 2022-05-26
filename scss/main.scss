@@ -295,8 +295,9 @@
     }
     .left_area{
         max-width: 364px;
-        width: calc(100% - 30px);
+        width: 100%;
         padding: 0 15px;
+        box-sizing: border-box;
         .sub_box{
             position: sticky;
             top: 109px;
@@ -313,11 +314,11 @@
         }
         @include tablet{
             max-width: 660px;
-            width: 630px;
+            width: 100%;
         }
         @include desktop{
             max-width: 655px;
-            width: 625px;
+            width: 100%;
             .sub_box{
                 .sub_title{
                     max-height: 92px;
@@ -348,16 +349,15 @@
     .right_area{
         margin-top: 36px;
         max-width: 364px;
-        width: calc(100% - 30px);
+        width: 100%;
         padding: 0 15px;
+        box-sizing: border-box;
         @include tablet{
-            max-width: 100%;
-            width: 630px;
+            max-width: 660px;
             margin-top: 36px;
         }
         @include desktop{
             max-width: 327px;
-            width: 297px;
             margin-top: 0;
         }
         @include pc{
@@ -377,6 +377,7 @@
         .sub_box{
             width: 100%;
             margin-top: 36px;
+            transition: .1s;
             &:nth-child(-n+2){margin-top: 0;}
             &:nth-child(2){margin-top: 36px;}
             .sub_title{
@@ -391,7 +392,7 @@
                 @include elip(2,32)
             }
             @include tablet{
-                width: 297px;
+                width: 296px;
                     &:nth-child(2){margin-top: 0;}
                     .sub_title{
                         max-height: 64px;
@@ -404,6 +405,7 @@
                     }
             }
             @include desktop{
+                width: 296px;
                     &:nth-child(2){margin-top: 36px;}
                     .sub_title{
                         max-height: 64px;
@@ -416,7 +418,7 @@
                     }
             }
             @include pc{
-                width: 297px;
+                width: 296px;
                     &:nth-child(2){margin-top: 0;}
                     .sub_title{
                         max-height: 64px;

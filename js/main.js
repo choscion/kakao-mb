@@ -86,17 +86,45 @@ $(function(){
     })
     
     
-    $('.box_wrap').masonry({
-        itemSelector: '.sub_box',
-        // columnWidth: 297, //너비크기
-        gutter:36, //각 레이아웃간의 간격
-        transitionDuration: '0.5s'
-        // initLayout: true
-      });
-    //   $('.box_wrap').masonry('refreshItems');
+    
 
       $('.btn-dark-pc').click(function(e){
         e.preventDefault();
         $('body').toggleClass('dark');
+    })
+    ScrollTrigger.matchMedia({
+        // "(min-width: 768px)": function(){ //768px 이상
+        //     $('.box_wrap').masonry({
+        //         itemSelector: '.sub_box',
+        //         // columnWidth: 297, //너비크기
+        //         gutter:36, //각 레이아웃간의 간격
+        //     });
+        // },
+        // "(min-width: 1024px)": function(){ //768px 이상
+        //     $('.box_wrap').masonry({
+        //         itemSelector: '.sub_box',
+        //         // columnWidth: 297, //너비크기
+        //     });
+        // },
+        // "(min-width: 1441px)": function(){ //768px 이상
+        //     $('.box_wrap').masonry({
+        //         itemSelector: '.sub_box',
+        //         gutter:36,
+        //     });
+        // },
+
+
+        "all": function () { // 모든 구간
+            $('.box_wrap').masonry({
+                itemSelector: '.sub_box',
+                gutter:36, //각 레이아웃간의 간격
+                // transitionDuration: '0.1s',
+                // stagger: 2,
+                // resize: true,
+                // initLayout: true
+            });
+
+            ScrollTrigger.refresh();
+        }
     })
 }) // Do not touch!!!!
